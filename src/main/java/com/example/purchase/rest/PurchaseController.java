@@ -20,12 +20,12 @@ public class PurchaseController {
 	private PurchaseService service;
 	
 	@GetMapping("/api/purchase/{userId}")
-	public @ResponseBody List<Purchase> listUserPurchases(@RequestBody String userId) {
+	public @ResponseBody List<Purchase> listUserPurchases(@PathVariable String userId) {
 		return service.getListPurchasesByUserId(userId);
 	}
 	
-	@GetMapping("/api/purchase/{userId}/{id}")
-	public Purchase getPurchaseByUserId(String userId, String purchaseId) {
+	@GetMapping("/api/purchase/{userId}/{purchaseId}")
+	public @ResponseBody Purchase getPurchaseByUserId(@PathVariable String userId, @PathVariable String purchaseId) {
 		return service.getPurchaseByUserId(userId, purchaseId);
 	}
 	
