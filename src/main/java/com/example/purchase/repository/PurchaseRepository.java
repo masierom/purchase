@@ -8,4 +8,5 @@ import com.example.purchase.domain.Purchase;
 
 public interface PurchaseRepository extends CrudRepository<Purchase, String> {
 	public List<Purchase> findByUserId(String userId);
+	public List<Purchase> findByProductId(String productId);
 }
