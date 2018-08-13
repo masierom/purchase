@@ -33,4 +33,9 @@ public class PurchaseController {
 	public @ResponseBody Purchase buy(@PathVariable String userId, @RequestBody PurchaseRequest request) {
 		return service.buy(userId, request.getProductId(), request.getQuantity());
 	}
+	
+	@GetMapping("/api/purchase/allPurchase")
+	public @ResponseBody List<Purchase> getAllPurchases() {
+		return service.getAllPurchases();
+	}
 }

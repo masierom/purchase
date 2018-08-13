@@ -16,6 +16,10 @@ public class PurchaseService {
 	@Autowired
 	private CatalogService cs;
 	
+	public List<Purchase> getAllPurchases(){
+		return (List<Purchase>) repository.findAll();
+	}
+	
 	public List<Purchase> getListPurchasesByUserId(String userId){
 		return repository.findByUserId(userId);
 	}
